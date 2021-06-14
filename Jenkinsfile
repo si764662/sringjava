@@ -1,5 +1,5 @@
 pipeline {
-   agent { label 'java-docker-slave' }
+   agent { label 'master' }
     triggers {
         pollSCM '* * * * *'
     }
@@ -8,7 +8,7 @@ pipeline {
             steps {
               script {
                     // The below will clone your repo and will be checked out to master branch by default.
-                    git credentialsId: 'si764662', url: 'https://github.com/si764662/sringjava.git'
+                    git credentialsId: '1', url: 'https://github.com/si764662/sringjava.git'
                     // Do a ls -lart to view all the files are cloned. It will be clonned. This is just for you to be sure about it.
                     sh "ls -lart ./*" 
                     // List all branches in your repo. 
