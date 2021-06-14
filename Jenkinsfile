@@ -31,7 +31,7 @@ pipeline {
         stage('deploy') {
             steps {
                 sh 'scp -o StrictHostKeyChecking=no app/build/libs/*.jar ec2-user@18.222.218.252:/home/ec2-user'
-                sh 'ssh -o StrictHostKeyChecking=no ec2-user@18.118.82.255 "java -cp /home/ec2-user/app.jar sringjava.App" '
+                sh 'ssh -o StrictHostKeyChecking=no ec2-user@18.222.218.252 "java -cp /home/ec2-user/app.jar sringjava.App" '
             }
         }
     }
